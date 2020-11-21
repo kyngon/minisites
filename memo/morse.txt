@@ -1,0 +1,56 @@
+.−\a\
+−...\b\
+−.−.\c\
+−..\d\
+.\e\
+..−.\f\
+−−.\g\
+....\h\
+..\i\
+.−−−\j\
+−.−\k\
+.−..\l\
+−−\m\
+−.\n\
+−−−\o\
+.−−.\p\
+−−.−\q\
+.−.\r\
+...\s\
+−\t\
+..−\u\
+...−\v\
+.−−\w\
+−..−\x\
+−.−−\y\
+−−..\z\
+.−−−−\1\
+..−−−\2\
+...−−\3\
+....−\4\
+.....\5\
+−....\6\
+−−...\7\
+−−−..\8\
+−−−−.\9\
+−−−−−\0\
+.−.−.−\.\full stop (period)
+−−..−−\,\comma
+−−−...\:\colon or division sign
+..−−..\?\question mark or request for repetition or transmission not understood
+.−−−−.\'\apostrophe
+−....−\-\hyphen or dash or subtraction sign
+−..−.\/\fraction bar or division sign
+−.−−.\(\left hand bracket
+−.−−.−\)\right hand bracket
+.−..−.\"\inverted commas (quotation marks) (before and after the words)
+−...−\=\double hyphen
+...−.\\understood
+........\\error(eight dots)
+.−.−.\+\cross or addition sign
+−.−\\invitation to transmit
+.−...\\wait
+...−.−\\end of work
+−.−.−\\starting signal (to precede every transmission)
+−..−\×\multiplication sign
+.−−.−.\@\commercial at

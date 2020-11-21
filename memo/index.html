@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Memo Cards</title> 
+        <script src=u.js></script>
+        <link rel="stylesheet" type="text/css" href="../stl.css">
+    </head>
+    <body onload="init()"><center>
+        <p class="titlecl">Memo Cards</p>
+        <br/>
+        <select class="selmenu" id="dictSelect" name="dictSelect" onchange="changeDict()">
+            <option value="none">(None)</option>
+            <option value="chinese">Chinese</option>
+            <option value="chinese3k">Chinese (bigger)</option>
+            <option value="russian">Russian: Cyrillic</option>
+            <option value="morse">Morse Code</option>
+            <option value="jap-hiragana">Japanese: Hiragana</option>
+            <option value="jap-katakana">Japanese: Katakana</option>
+        </select>
+        <p class="vspaced">
+        <button id="b_prev" class="button" onclick="prev()">Prv</button>
+        &nbsp;&nbsp;&nbsp;
+        <input id="pgnum" class="button" type="number" min="0" max="0" value="0">
+        <button id="b_go" class="button" onclick="gopg()">Go</button>
+        &nbsp;&nbsp;&nbsp;
+        <button id="b_next" class="button" onclick="next()">Nxt</button>
+        &nbsp;&nbsp;&nbsp;
+        <button id="b_rnd" class="button" onclick="randchar()">Rnd</button>
+        <p class="vspaced">
+        <div id=char_1_txt>Permalink</div>
+
+        <div id="char_1_cnt" class="cchar" onclick=uhide()></div>   
+        &nbsp;
+        <div class=spoiler id="spoiler" style="display:none"></div></td>
+           
+
+    </center>
+</body>
+</html>

@@ -1,0 +1,90 @@
+ァ\SMALL A\
+ア\A\
+ィ\SMALL I\
+イ\I\
+ゥ\SMALL U\
+ウ\U\
+ェ\SMALL E\
+エ\E\
+ォ\SMALL O\
+オ\O\
+カ\KA\
+ガ\GA\
+キ\KI\
+ギ\GI\
+ク\KU\
+グ\GU\
+ケ\KE\
+ゲ\GE\
+コ\KO\
+ゴ\GO\
+サ\SA\
+ザ\ZA\
+シ\SI\
+ジ\ZI\
+ス\SU\
+ズ\ZU\
+セ\SE\
+ゼ\ZE\
+ソ\SO\
+ゾ\ZO\
+タ\TA\
+ダ\DA\
+チ\TI\
+ヂ\DI\
+ッ\SMALL TU\
+ツ\TU\
+ヅ\DU\
+テ\TE\
+デ\DE\
+ト\TO\
+ド\DO\
+ナ\NA\
+ニ\NI\
+ヌ\NU\
+ネ\NE\
+ノ\NO\
+ハ\HA\
+バ\BA\
+パ\PA\
+ヒ\HI\
+ビ\BI\
+ピ\PI\
+フ\HU\
+ブ\BU\
+プ\PU\
+ヘ\HE\
+ベ\BE\
+ペ\PE\
+ホ\HO\
+ボ\BO\
+ポ\PO\
+マ\MA\
+ミ\MI\
+ム\MU\
+メ\ME\
+モ\MO\
+ャ\SMALL YA\
+ヤ\YA\
+ュ\SMALL YU\
+ユ\YU\
+ョ\SMALL YO\
+ヨ\YO\
+ラ\RA\
+リ\RI\
+ル\RU\
+レ\RE\
+ロ\RO\
+ヮ\SMALL WA\
+ワ\WA\
+ヰ\WI\
+ヱ\WE\
+ヲ\WO\
+ン\N\
+ヴ\VU\
+ヵ\SMALL KA\
+ヶ\SMALL KE\
+ヷ\VA\
+ヸ\VI\
+ヹ\VE\
+ヺ\VO\
