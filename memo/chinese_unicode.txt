@@ -1,0 +1,18 @@
+﻿&#38646;\líng\zero
+&#x4e00;\yī\one
+&#x4e8c;\èr\two
+&#x4e09;\sān\three
+&#x56db;\sì\four
+&#x4e94;\wŭ\five
+&#x516d;\liù\six
+&#x4e03;\qī\seven
+&#x516b;\bā\eight
+&#x4e5d;\jiŭ\nine
+&#x5341;\shí\ten
+&#x5343;\qiān\thousand
+&#x4E07;\wàn\ten-thousand
+&#x767E;\băi\hundred
+&#x559d;\hē\to drink
+&#x6C34;\shuĭ\water
+&#x8c22;&#x8c22;\xièxie\thank you
+&#x8c22;\xiè\(half of) thank you

@@ -1,0 +1,47 @@
+
+  body {
+    background-color: rgb(215, 243, 252);
+}
+.titlecl{
+  font-size: 500%;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  font-weight: bolder; 
+}
+  .img_ttl_cl {
+    width: 300px;
+    height: auto;
+  }
+  .cchar {
+    border: 2px;
+    border-style: solid;
+    font-size: 2000%;
+  }
+  input[type="number"] {
+    width:50px;
+ }
+ .vspaced {
+  margin-bottom: 10px;
+}
+.shide {
+  height:100px;
+  width:100px; 
+}
+.spoiler{
+  font-size: 250%;
+}
+.button{
+  text-align: center;
+  height:100px;
+  width:100px;
+  font-style: normal;
+  font-size: 200%;
+ font-weight: bolder; 
+}
+input[type=number]{
+  width: 120px;
+  height:92px;
+} 
+.selmenu{
+   width: 300px;
+}
