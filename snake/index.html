@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Snake!</title> 
+        <link rel="stylesheet" type="text/css" href="../stl.css">
+    </head>
+    <body>
+        Hello!<br>
+        Score: <div id="score">5</div>
+        Highscore: <div id="hscore">5</div><br>
+    </body>
+<canvas id="gc" width="400" height="400">
+</canvas>
+<script>
+window.onload=function() {
+canv=document.getElementById("gc");
+ctx=canv.getContext("2d");
+document.addEventListener("keydown",keyPush);
+sc=document.getElementById("score");
+hsc=document.getElementById("hscore");
+//setInterval(game,1000/8);
+//setTimeout(game,1000/8);
+game();
+}
+
+px=py=10;
+gs=tc=20;
+ax=ay=15;
+vx=vy=0;
+trail=[];
+tail=5;
+stop=1;
+nokeys=0;
+
+itergame=iterkey=0;
+function activatekeys(){
+    nokeys=0;
+    trail=[];
+}
+function game(){
+    px+=vx;
+    py+=vy;
+    if(px<0){px=tc-1;}
+    if(px>tc-1){px=0;}
+    if(py<0){py=tc-1;}
+    if(py>tc-1){py=0;}
+    ctx.fillStyle="black";
+    ctx.fillRect(0,0,canv.width,canv.height);
+
+    ctx.fillStyle="lime";
+    for(var i=0; i<trail.length; i++){
+        ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
+        if(trail[i].x==px && trail[i].y==py){
+            tail=5;    
+            stop=1;
+            nokeys=1;
+            setTimeout(activatekeys,4000);
+        }
+    }
+    
+    trail.push({x:px,y:py});
+    while(trail.length>tail){
+        trail.shift();
+        }
+    if(ax==px && ay==py){
+        tail++;
+        sc.innerHTML=tail;
+        if(hsc.innerHTML<tail)
+        {
+            hsc.innerHTML=tail;
+        }
+        ax=Math.floor(Math.random()*tc);
+        ay=Math.floor(Math.random()*tc);
+    }
+
+    ctx.fillStyle="red ";
+    ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);   
+    if(stop==0){
+    setTimeout(game,1000/8);  
+    }
+    itergame++;
+}
+
+function keyPush(evt){
+    if(nokeys==0 && iterkey!=itergame){
+        iterkey=itergame;
+        sc.innerHTML=tail;
+    switch(evt.keyCode){
+    case 37:
+        if(vx!=1 && vy!=0){
+            vx=-1; vy=0;
+        }
+        if(stop==1){stop=0; vx=-1; vy=0; game();}
+        break;
+    case 38:
+        if(vx!=0 && vy!=1){
+            vx=0; vy=-1;
+        }
+        if(stop==1){stop=0; vx=0; vy=-1; game();}
+        break;
+    case 39:
+        if(vx!=-1 && vy!=0){
+            vx=1; vy=0;
+        }
+        if(stop==1){stop=0; vx=1; vy=0; game();}
+        break;
+    case 40:
+        if(vx!=0 && vy!=-1){
+            vx=0; vy=1;
+        }
+        if(stop==1){stop=0; vx=0; vy=1; game();}
+        break;
+    }
+    }
+}
+</script>
+
+</html>
