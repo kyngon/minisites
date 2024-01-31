@@ -65,12 +65,12 @@ function YearCalGen(){
             day=j+1;
             dow=(dow+1)%7;
             textinday=matrix[j][i];
-            svgyearcal+=` <svg class="dow${dow}" width="200" height="20" x="${posx}" y="${posy}">\
-                <rect width="198" height="18" x="1" y="1" rx="10" ry="5" fill="lightgreen"/>\
-                <rect width="40" height="20" x="0" y="0" rx="10" ry="5" fill="yellow"/>\
-                <text x="12" y="15" fill="blue">${day}</text>\
-                <text x="60" y="15" fill="black">${textinday}</text>\
-               </svg>`;
+            svgyearcal+=`<svg class="dow${dow}" width="200" height="20" x="${posx}" y="${posy}">`
+            svgyearcal+=`<rect width="198" height="18" x="1" y="1" rx="10" ry="5" fill="lightgreen"/>`
+          //  svgyearcal+=`<rect width="40" height="20" x="0" y="0" rx="10" ry="5" fill="yellow"/>`
+            svgyearcal+=`<text x="12" y="15" fill="blue">${day}</text>`
+            svgyearcal+=`<text x="60" y="15" fill="black">${textinday}</text>`
+            svgyearcal+=`</svg>`;
         }
     }
 
