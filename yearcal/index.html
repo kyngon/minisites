@@ -27,13 +27,14 @@ function YearCalGen(){
     svgyearcal+= '<style>\
         .dow6>rect{fill:lightpink}\
         .dow0>rect{fill:red}\
+        .monthname{font-size:30px}\
         </style>';
     months=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];    
         for (let i = 0; i < 12; i++) {
             posx=i*200;
             svgyearcal+=` <svg class="monthname" width="200" height="40" x="${posx}" y="0">\
     <rect width="198" height="28" x="1" y="1" rx="10" ry="5" fill="green"/>\
-    <text x="60" y="15" fill="black">${months[i]}</text>\
+    <text x="70" y="25" fill="black">${months[i]}</text>\
   </svg>`;
 
         }
