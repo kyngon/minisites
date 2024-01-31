@@ -7,8 +7,7 @@
     <body>
         <input type="number" id="yearinput" value="2024">
         <br>
-        <textarea id="datesinput" name="csvdates" rows="4" cols="50">
-        </textarea>
+        <textarea id="datesinput" name="csvdates" rows="4" cols="50" value=""></textarea>
         <br>
 
         <button type="button" onclick="YearCalGen();">Generate Calendar</button>
@@ -20,6 +19,24 @@
 
 <script type="text/javascript">
 function YearCalGen(){
+    csvdates=document.getElementById("datesinput").value
+    csvrows=csvdates.split('\n');
+    
+    var matrix = [];
+    for(var i=0; i<31; i++) {
+      matrix[i] = [];
+      for(var j=0; j<12; j++) {
+        matrix[i][j] = "";
+      }
+    }
+
+    for(var i=0;i<csvrows.length;i++){
+      if(csvrows[i].length>4){
+       items=csvrows[i].split(",");
+       matrix[items[0]-1][items[1]-1]=items[2];
+      }
+    }
+
     year=document.getElementById("yearinput").value
     d=new Date((year-1)+"-12-31");
     dow=d.getDay();
@@ -30,39 +47,35 @@ function YearCalGen(){
         .monthname{font-size:30px}\
         </style>';
     months=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];    
-        for (let i = 0; i < 12; i++) {
-            posx=i*200;
-            svgyearcal+=` <svg class="monthname" width="200" height="40" x="${posx}" y="0">\
-    <rect width="198" height="28" x="1" y="1" rx="10" ry="5" fill="green"/>\
-    <text x="70" y="25" fill="black">${months[i]}</text>\
-  </svg>`;
-
-        }
+    for (let i = 0; i < 12; i++) {
+        posx=i*200;
+        svgyearcal+=` <svg class="monthname" width="200" height="40" x="${posx}" y="0">\
+            <rect width="198" height="28" x="1" y="1" rx="10" ry="5" fill="green"/>\
+            <text x="70" y="25" fill="black">${months[i]}</text>\
+            </svg>`;
+    }
     daysinmonth=[31,28,31,30,31,30,31,31,30,31,30,31];
     if (0==year%4 && 0!=year%100){
       daysinmonth[1]+=1;
     }
-        for (let i = 0; i < 12; i++) {
-            for (let j = 0; j < daysinmonth[i]; j++) {
-                posx=i*200;
-                posy=40+j*20;  
-                day=j+1;
-                dow=(dow+1)%7;
-                textinday="";
-  svgyearcal+=` <svg class="dow${dow}" width="200" height="20" x="${posx}" y="${posy}">\
-    <rect width="198" height="18" x="1" y="1" rx="10" ry="5" fill="lightgreen"/>\
-    <rect width="40" height="20" x="0" y="0" rx="10" ry="5" fill="yellow"/>\
-    <text x="12" y="15" fill="blue">${day}</text>\
-    <text x="60" y="15" fill="black">${textinday}</text>\
-  </svg>`;
+    for (let i = 0; i < 12; i++) {
+        for (let j = 0; j < daysinmonth[i]; j++) {
+            posx=i*200;
+            posy=40+j*20;  
+            day=j+1;
+            dow=(dow+1)%7;
+            textinday=matrix[j][i];
+            svgyearcal+=` <svg class="dow${dow}" width="200" height="20" x="${posx}" y="${posy}">\
+                <rect width="198" height="18" x="1" y="1" rx="10" ry="5" fill="lightgreen"/>\
+                <rect width="40" height="20" x="0" y="0" rx="10" ry="5" fill="yellow"/>\
+                <text x="12" y="15" fill="blue">${day}</text>\
+                <text x="60" y="15" fill="black">${textinday}</text>\
+               </svg>`;
         }
     }
 
-
-svgyearcal+='</svg>';
-
+    svgyearcal+='</svg>';
     document.getElementById("svgcalres").innerHTML = svgyearcal;
-
 }
 
 function downloadSvg(){
