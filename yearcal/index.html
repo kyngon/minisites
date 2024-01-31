@@ -12,6 +12,7 @@
         <br>
 
         <button type="button" onclick="YearCalGen();">Generate Calendar</button>
+        <button type="button" onclick="downloadSvg();">Save Calendar</button>
         <br>
         <br>
         <div id="svgcalres"></div>
@@ -23,6 +24,10 @@ function YearCalGen(){
     d=new Date((year-1)+"-12-31");
     dow=d.getDay();
     svgyearcal = '<svg width="2400" height="660" x="0" y="0" xmlns="http://www.w3.org/2000/svg">';
+    svgyearcal+= '<style>\
+        .dow6>rect{fill:lightpink}\
+        .dow0>rect{fill:red}\
+        </style>';
     months=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];    
         for (let i = 0; i < 12; i++) {
             posx=i*200;
@@ -57,6 +62,15 @@ svgyearcal+='</svg>';
 
     document.getElementById("svgcalres").innerHTML = svgyearcal;
 
+}
+
+function downloadSvg(){
+    const link = document.createElement("a");
+    const file = new Blob([svgyearcal], { type: 'text/plain' });
+    link.href = URL.createObjectURL(file);
+    link.download = "yearcal"+year+".svg";
+    link.click();
+    URL.revokeObjectURL(link.href);
 }
 </script>
 
