@@ -40,19 +40,20 @@ function YearCalGen(){
     year=document.getElementById("yearinput").value
     d=new Date((year-1)+"-12-31");
     dow=d.getDay();
-    svgyearcal = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297 210">';
+    svgyearcal = '<svg class="main" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297 210">';
     svgyearcal+= '<style>\
-        .day>text{font-size:35%}\
-        .day.dow6>rect{fill:lightpink}\
-        .day.dow0>rect{fill:red}\
+        .main{background-color: #181e26}\
+        .intext{font-size:15%}\
+        .daynum{font-size:35%}\
+        .day.dow6>rect{fill:#a4c3f5}\
+        .day.dow0>rect{fill:#357ef2}\
         .monthname{font-size:40%}\
-        .tid{font-size:10%}\
         </style>';
     months=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];    
     for (let i = 0; i < 12; i++) {
         posx=i*8.33;
         svgyearcal+=` <svg class="monthname" width="8.33%" height="3.03%" x="${posx}%" y="0">\
-            <rect width="96%" height="96%" x="2%" y="2%" rx="5%" ry="5%" fill="green"/>\
+            <rect width="96%" height="96%" x="2%" y="2%" rx="5%" ry="5%" fill="#f5b958"/>\
             <text x="25%" y="80%" fill="black">${months[i]}</text>\
             </svg>`;
     }
@@ -68,10 +69,10 @@ function YearCalGen(){
             dow=(dow+1)%7;
             textinday=matrix[j][i];
             svgyearcal+=`<svg class="day dow${dow}" width="8.33%" height="3.03%" x="${posx}%" y="${posy}%">`
-            svgyearcal+=`<rect width="96%" height="96%" x="2%" y="2%" rx="5%" ry="5%" fill="lightgreen"/>`
+            svgyearcal+=`<rect width="96%" height="96%" x="2%" y="2%" rx="5%" ry="5%" fill="white"/>`
           //  svgyearcal+=`<rect width="40" height="20" x="0" y="0" rx="10" ry="5" fill="yellow"/>`
-            svgyearcal+=`<text x="5%" y="80%" fill="blue">${day}</text>`
-            svgyearcal+=`<text class="tid" x="30%" y="70%" fill="black">${textinday}</text>`
+            svgyearcal+=`<text class="daynum" x="5%" y="80%" fill="#102b57">${day}</text>`
+            svgyearcal+=`<text class="intext" x="30%" y="65%" fill="black">${textinday}</text>`
             svgyearcal+=`</svg>`;
         }
     }
