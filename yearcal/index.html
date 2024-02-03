@@ -52,7 +52,7 @@ function YearCalGen(){
     months=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];    
     for (let i = 0; i < 12; i++) {
         posx=i*8.33;
-        svgyearcal+=` <svg class="monthname" width="8.33%" height="3.03%" x="${posx}%" y="0">\
+        svgyearcal+=` <svg class="monthname" width="8.33%" height="3.03%" x="${posx}%" y="0.2%">\
             <rect width="96%" height="96%" x="2%" y="2%" rx="5%" ry="5%" fill="#f5b958"/>\
             <text x="25%" y="80%" fill="black">${months[i]}</text>\
             </svg>`;
@@ -64,7 +64,7 @@ function YearCalGen(){
     for (let i = 0; i < 12; i++) {
         for (let j = 0; j < daysinmonth[i]; j++) {
             posx=i*8.33;
-            posy=4.06+j*3.03;  
+            posy=3.99+j*3.09;  
             day=j+1;
             dow=(dow+1)%7;
             textinday=matrix[j][i];
